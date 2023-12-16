@@ -1,5 +1,7 @@
 package pairmatching.domain;
 
+import java.util.Arrays;
+
 import static pairmatching.domain.Level.*;
 
 public enum Mission {
@@ -21,5 +23,12 @@ public enum Mission {
 
     public Level getLevel() {
         return level;
+    }
+
+    public static Mission getByName(String name) {
+        return Arrays.stream(values())
+                .filter(course -> course.getName().equals(name))
+                .findFirst()
+                .orElse(null);
     }
 }

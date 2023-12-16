@@ -1,5 +1,7 @@
 package pairmatching.view;
 
+import java.util.List;
+
 public class InputValidation {
     public boolean mainValidate(String given) {
         if (!given.equals("1") && !given.equals("2") && !given.equals("3") && !given.equals("Q")){
@@ -12,7 +14,7 @@ public class InputValidation {
         }
         return true;
     }
-    public boolean classificationValidate(String given) {
+    public boolean classificationValidate(List<String> given) {
         return true;
     }
     public boolean rematchValidate(String given) {

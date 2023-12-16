@@ -1,5 +1,7 @@
 package pairmatching.domain;
 
+import java.util.Arrays;
+
 public enum Level {
     LEVEL1("레벨1"),
     LEVEL2("레벨2"),
@@ -17,5 +19,11 @@ public enum Level {
         return name;
     }
 
+    public static Level getByName(String name) {
+        return Arrays.stream(values())
+                .filter(course -> course.getName().equals(name))
+                .findFirst()
+                .orElse(null);
+    }
     // 추가 기능 구현
 }

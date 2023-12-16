@@ -6,9 +6,10 @@ import pairmatching.domain.CrewRepository;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Scanner;
 
-public class GetName {
+public class SetCrew {
     public void GetBackEndNames() throws FileNotFoundException {
         Scanner scanner = new Scanner(new File("/home/gracek/woowacourse/java-pairmatching-precourse/src/main/resources/backend-crew.md"));
 

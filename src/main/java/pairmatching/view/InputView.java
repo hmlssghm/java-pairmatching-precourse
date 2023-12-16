@@ -1,5 +1,7 @@
 package pairmatching.view;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class InputView extends InputValidation{
@@ -17,14 +19,22 @@ public class InputView extends InputValidation{
         return answer;
     }
 
-    public String selectClassification() {
+    public List<String> selectClassification() {
         String answer;
+        List<String> answerList;
         boolean flag;
         do {
             answer = scanner.nextLine();
-            flag = classificationValidate(answer);//예외 처리
+            answerList = makeList(answer);
+            flag = classificationValidate(answerList);//예외 처리
         } while(!flag);
-        return answer;
+        return answerList;
+    }
+
+    public List<String> makeList(String given) {
+        String[] words = given.split(",");
+        List<String> list = Arrays.asList(words);
+        return list;
     }
 
     public String selectRematch() {
